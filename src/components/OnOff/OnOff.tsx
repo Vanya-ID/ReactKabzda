@@ -9,6 +9,8 @@ type OnOffType = {
 export function OnOff(props: OnOffType) {
 
     const onStyle = {
+        cursor : "pointer",
+
         width: '30px',
         height: '20px',
         border: '1px solid black',
@@ -18,6 +20,8 @@ export function OnOff(props: OnOffType) {
         backgroundColor: props.on ? 'green' : 'white'
     }
     const offStyle = {
+        cursor : "pointer",
+
         width: '30px',
         height: '20px',
         border: '1px solid black',

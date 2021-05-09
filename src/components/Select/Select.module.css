@@ -1,0 +1,21 @@
+
+.main{
+    border: 1px solid black;
+    cursor: pointer;
+    min-height: 50px;
+    max-width: 60px;
+}
+.items {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    padding: 5px;
+    border: 1px solid red;
+}
+.item.selected{
+    background-color: #5ce2e2;
+    color: white;
+}
+.select.active .items {
+    display: block;
+}
