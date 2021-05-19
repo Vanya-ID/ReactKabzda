@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import s from './UncontrolledRating.module.css'
 
+export const UncontrolledRatingMemo = React.memo(UncontrolledRating)
 
-export function UncontrolledRating() {
+ function UncontrolledRating() {
     let [value, setValue] = useState(0)
     return (
         <div className={s.rating}>

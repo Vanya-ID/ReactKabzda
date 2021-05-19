@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 
+export const UncontrolledOnOffMemo = React.memo(UncontrolledOnOff)
 
-export function UncontrolledOnOff() {
+ function UncontrolledOnOff() {
 
     let [unOn, setUnOn] = useState(false)
     const onStyle = {

@@ -12,7 +12,9 @@ type SelectPropstype = {
     items: ItemType[]
 }
 
-export function Select(props: SelectPropstype) {
+export const SelectMemo = React.memo(Select)
+
+ function Select(props: SelectPropstype) {
     const [active, setActive] = useState<boolean>(false)
     const [hoveredItemValue, setHoveredItemValue] = useState(props.value)
 
@@ -32,11 +34,11 @@ export function Select(props: SelectPropstype) {
         if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
             for (let i = 0; i < props.items.length; i++) {
                 if (props.items[i].value === hoveredItemValue) {
-                    const pretendentElement = e.key === 'ArrowDown' ?
+                    const previousElement = e.key === 'ArrowDown' ?
                         props.items[i + 1]
                         : props.items[i - 1]
-                    if (pretendentElement) {
-                        props.onChange(pretendentElement.value)
+                    if (previousElement) {
+                        props.onChange(previousElement.value)
                         break
                     }
                 }

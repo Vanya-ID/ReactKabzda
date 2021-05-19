@@ -5,8 +5,9 @@ type OnOffType = {
     setOn: (value: boolean) => void
 }
 
+export const  OnOffMemo = React.memo(OnOff)
 
-export function OnOff(props: OnOffType) {
+ function OnOff(props: OnOffType) {
 
     const onStyle = {
         cursor : "pointer",

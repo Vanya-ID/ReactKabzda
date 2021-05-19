@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import './App.css';
-import {UncontrolledOnOff} from "./components/OnOff/UncontrolledOnOff";
-import {OnOff} from './components/OnOff/OnOff';
-import {Rating, RatingValueType} from "./components/Rating/Rating";
-import {UncontrolledRating} from "./components/Rating/UncontrolledRating";
-import {Accordion} from "./components/Accordion/Accordion";
-import UncontrolledAccordion from "./components/Accordion/UncontrolledAccordion";
-import {Select} from "./components/Select/Select";
+import {UncontrolledOnOffMemo} from "./components/OnOff/UncontrolledOnOff";
+import {OnOffMemo} from './components/OnOff/OnOff';
+import {RatingMemo, RatingValueType} from "./components/Rating/Rating";
+import {UncontrolledRatingMemo} from "./components/Rating/UncontrolledRating";
+import {AccordionMemo} from "./components/Accordion/Accordion";
+import UncontrolledAccordionMemo from "./components/Accordion/UncontrolledAccordion";
+import {SelectMemo} from "./components/Select/Select";
 
 function App() {
 
@@ -18,10 +18,10 @@ function App() {
 
     return (
         <div className={'App'}>
-            <UncontrolledOnOff/>
-            <OnOff on={on} setOn={setOn}/>
-            <Rating value={ratingValue} onClick={setRatingValue}/>
-            <Accordion titleValue={'Menu'} collapsed={accordionCollapsed}
+            <UncontrolledOnOffMemo/>
+            <OnOffMemo on={on} setOn={setOn}/>
+            <RatingMemo value={ratingValue} onClick={setRatingValue}/>
+            <AccordionMemo titleValue={'Menu'} collapsed={accordionCollapsed}
                        accordionCollapsed={accordionCollapsed}
                        setAccordionCollapsed={setAccordionCollapsed}
                        items={[
@@ -32,9 +32,9 @@ function App() {
                            console.log("Click")
                        }}
             />
-            <UncontrolledAccordion titleValue={'MENU'}/>
-            <UncontrolledRating/>
-            <Select value={value}
+            <UncontrolledAccordionMemo titleValue={'MENU'}/>
+            <UncontrolledRatingMemo/>
+            <SelectMemo value={value}
                     onChange={setValue}
                     items={[
                 {value: 1, title: "Minsk"},

@@ -7,12 +7,16 @@ type AccordionPropsType = {
 
 }
 
+const UncontrolledAccordionMemo = React.memo(UncontrolledAccordion)
+const AccordionTitleMemo = React.memo(AccordionTitle)
+const AccordionBodyMemo = React.memo(AccordionBody)
+
 function UncontrolledAccordion(props: AccordionPropsType) {
     let [toggle, setToggle] = useState(false)
     return (
         <div>
-            <AccordionTitle onClick={() => setToggle(!toggle)} title={props.titleValue}/>
-            {toggle && <AccordionBody/>}
+            <AccordionTitleMemo onClick={() => setToggle(!toggle)} title={props.titleValue}/>
+            {toggle && <AccordionBodyMemo/>}
         </div>
     )
 }
@@ -40,4 +44,4 @@ function AccordionBody() {
     )
 }
 
-export default UncontrolledAccordion;
+export default UncontrolledAccordionMemo;
