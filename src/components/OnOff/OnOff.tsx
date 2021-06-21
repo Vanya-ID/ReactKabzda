@@ -5,12 +5,12 @@ type OnOffType = {
     setOn: (value: boolean) => void
 }
 
-export const  OnOffMemo = React.memo(OnOff)
+export const OnOffMemo = React.memo(OnOff)
 
- function OnOff(props: OnOffType) {
+function OnOff(props: OnOffType) {
 
     const onStyle = {
-        cursor : "pointer",
+        cursor: "pointer",
 
         width: '30px',
         height: '20px',
@@ -21,7 +21,7 @@ export const  OnOffMemo = React.memo(OnOff)
         backgroundColor: props.on ? 'green' : 'white'
     }
     const offStyle = {
-        cursor : "pointer",
+        cursor: "pointer",
 
         width: '30px',
         height: '20px',
@@ -42,9 +42,15 @@ export const  OnOffMemo = React.memo(OnOff)
 
     return (
         <div>
-            <div onClick={() => {props.setOn(true)}} style={onStyle}>ON</div>
-            <div onClick={() => {props.setOn(false)}} style={offStyle}>OFF</div>
-            <div style={indicatorStyle}> </div>
+            <div onClick={() => {
+                props.setOn(true)
+            }} style={onStyle}>ON
+            </div>
+            <div onClick={() => {
+                props.setOn(false)
+            }} style={offStyle}>OFF
+            </div>
+            <div style={indicatorStyle}></div>
         </div>
     )
 }

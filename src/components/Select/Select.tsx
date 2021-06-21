@@ -50,27 +50,29 @@ export const SelectMemo = React.memo(Select)
     }
 
     return (
-        <div
-            tabIndex={0}
-            className={s.select + ' ' + (active ? s.active : '')}
-            onKeyDown={onKeyPress}
-        >
+        <div className={s.selectParent}>
+            <div
+                tabIndex={0}
+                className={s.select + ' ' + (active ? s.active : '')}
+                onKeyDown={onKeyPress}
+            >
                 <span className={s.main} onClick={toggleItems}>
                     {selectedItem && selectedItem.title}
                 </span>
-            {
-                active &&
-                <div className={s.items}>
-                    {props.items.map(i => <div
-                        onMouseEnter={() => setHoveredItemValue(i.value)}
-                        className={s.item + ' ' + (hoveredItem === i ? s.selected : '')}
-                        key={i.value}
-                        onClick={() => onItemClick((i.value))}
-                    >
-                        {i.title}
-                    </div>)}
-                </div>
-            }
+                {
+                    active &&
+                    <div className={s.items}>
+                        {props.items.map(i => <div
+                            onMouseEnter={() => setHoveredItemValue(i.value)}
+                            className={s.item + ' ' + (hoveredItem === i ? s.selected : '')}
+                            key={i.value}
+                            onClick={() => onItemClick((i.value))}
+                        >
+                            {i.title}
+                        </div>)}
+                    </div>
+                }
+            </div>
         </div>
     )
 }

@@ -7,6 +7,8 @@ import {UncontrolledRatingMemo} from "./components/Rating/UncontrolledRating";
 import {AccordionMemo} from "./components/Accordion/Accordion";
 import UncontrolledAccordionMemo from "./components/Accordion/UncontrolledAccordion";
 import {SelectMemo} from "./components/Select/Select";
+import Timer from './components/Timer/Timer';
+import Clock from "./components/Clock/Clock";
 
 function App() {
 
@@ -34,13 +36,16 @@ function App() {
             />
             <UncontrolledAccordionMemo titleValue={'MENU'}/>
             <UncontrolledRatingMemo/>
-            <SelectMemo value={value}
-                    onChange={setValue}
-                    items={[
-                {value: 1, title: "Minsk"},
-                {value: 2, title: "Borisov"},
-                {value: 3, title: "Piter"}
-            ]}/>
+            {/*<Timer/>*/}
+            <Clock mode={'digital'}/>
+            <Clock mode={'analog'}/>
+            {/*<SelectMemo value={value}*/}
+            {/*            onChange={setValue}*/}
+            {/*            items={[*/}
+            {/*                {value: 1, title: "Minsk"},*/}
+            {/*                {value: 2, title: "Borisov"},*/}
+            {/*                {value: 3, title: "Piter"}*/}
+            {/*            ]}/>*/}
         </div>
     )
 }

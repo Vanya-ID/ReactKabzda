@@ -1,4 +1,8 @@
-
+.selectParent{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
 .main{
     border: 1px solid black;
     cursor: pointer;
@@ -18,4 +22,6 @@
 }
 .select.active .items {
     display: block;
+    margin-left: 167px;
+    margin-top: 10px;
 }
